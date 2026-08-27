@@ -13,8 +13,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.crmconvert.com"),
   title: "CRM Convert | CRM Strategy & Lifecycle Consulting",
   description: "CRM strategy, lifecycle marketing and automation consulting for digital businesses.",
+  icons: {
+    icon: "/favicon.svg",
+  },
+  alternates: {
+    canonical: "/",
+    languages: {
+      en: "/",
+      es: "/es",
+    },
+  },
 };
 
 export default function RootLayout({

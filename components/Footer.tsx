@@ -1,4 +1,32 @@
-export default function Footer() {
+type FooterProps = {
+  lang?: "en" | "es";
+};
+
+export default function Footer({ lang = "en" }: FooterProps) {
+  const content = {
+    en: {
+      tagline: "CRM • MARKETING AUTOMATION • LIFECYCLE",
+      location: "Valencia, Spain",
+      services: "Services",
+      experience: "Experience",
+      contact: "Contact",
+      email: "Email",
+      linkedin: "LinkedIn",
+    },
+
+    es: {
+      tagline: "CRM • AUTOMATIZACIÓN DE MARKETING • LIFECYCLE",
+      location: "Valencia, España",
+      services: "Servicios",
+      experience: "Experiencia",
+      contact: "Contacto",
+      email: "Email",
+      linkedin: "LinkedIn",
+    },
+  };
+
+  const text = content[lang];
+
   return (
     <footer className="bg-black text-white px-8 py-10">
 
@@ -17,11 +45,11 @@ export default function Footer() {
             </p>
 
             <p className="text-gray-500 text-xs tracking-[0.25em] mt-2">
-              CRM • MARKETING AUTOMATION • LIFECYCLE
+              {text.tagline}
             </p>
 
             <p className="text-gray-500 text-sm mt-1">
-              Valencia, Spain
+              {text.location}
             </p>
 
           </div>
@@ -35,21 +63,21 @@ export default function Footer() {
               href="#services"
               className="text-gray-300 hover:text-blue-400 transition"
             >
-              Services
+              {text.services}
             </a>
 
             <a
               href="#experience"
               className="text-gray-300 hover:text-blue-400 transition"
             >
-              Experience
+              {text.experience}
             </a>
 
             <a
               href="#contact"
               className="text-gray-300 hover:text-blue-400 transition"
             >
-              Contact
+              {text.contact}
             </a>
 
           </div>
@@ -63,7 +91,7 @@ export default function Footer() {
               href="mailto:silvanaebernal@gmail.com"
               className="text-gray-300 hover:text-blue-400 transition"
             >
-              Email
+              {text.email}
             </a>
 
             <a
@@ -72,7 +100,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-blue-400 transition"
             >
-              LinkedIn
+              {text.linkedin}
             </a>
 
           </div>

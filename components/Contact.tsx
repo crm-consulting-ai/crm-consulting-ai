@@ -2,8 +2,60 @@
 
 import { useState } from "react";
 
-export default function Contact() {
+type ContactProps = {
+  lang?: "en" | "es";
+};
+
+export default function Contact({ lang = "en" }: ContactProps) {
   const [status, setStatus] = useState("");
+
+  const content = {
+    en: {
+      eyebrow: "CONTACT",
+      title: "Let’s work together",
+      description:
+        "Let’s discuss how CRM can improve your customer lifecycle, engagement and retention.",
+      name: "Name",
+      email: "Email",
+      company: "Company",
+      message: "Message",
+      namePlaceholder: "Your name",
+      emailPlaceholder: "you@company.com",
+      companyPlaceholder: "Your company",
+      messagePlaceholder:
+        "Tell me a little about what you are looking to improve...",
+      submit: "Send message",
+      sending: "Sending...",
+      success: "Message sent successfully.",
+      error: "Something went wrong. Please try again.",
+      emailLink: "Email",
+      linkedinLink: "LinkedIn",
+    },
+
+    es: {
+      eyebrow: "CONTACTO",
+      title: "Trabajemos juntos",
+      description:
+        "Hablemos sobre cómo el CRM puede mejorar el ciclo de vida, el engagement y la retención de tus clientes.",
+      name: "Nombre",
+      email: "Email",
+      company: "Empresa",
+      message: "Mensaje",
+      namePlaceholder: "Tu nombre",
+      emailPlaceholder: "tu@email.com",
+      companyPlaceholder: "Tu empresa",
+      messagePlaceholder:
+        "Cuéntame brevemente qué te gustaría mejorar...",
+      submit: "Enviar mensaje",
+      sending: "Enviando...",
+      success: "Mensaje enviado correctamente.",
+      error: "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
+      emailLink: "Email",
+      linkedinLink: "LinkedIn",
+    },
+  };
+
+  const text = content[lang];
 
   return (
     <section
@@ -18,16 +70,15 @@ export default function Contact() {
         <div className="text-center mb-12">
 
           <p className="uppercase tracking-[0.3em] text-sm text-blue-500 mb-6">
-            CONTACT
+            {text.eyebrow}
           </p>
 
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Let’s work together
+            {text.title}
           </h2>
 
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            Let’s discuss how CRM can improve your customer lifecycle,
-            engagement and retention.
+            {text.description}
           </p>
 
         </div>
@@ -42,7 +93,7 @@ export default function Contact() {
             const form = e.currentTarget;
             const formData = new FormData(form);
 
-            setStatus("Sending...");
+            setStatus(text.sending);
 
             try {
               const response = await fetch("/api/contact", {
@@ -51,13 +102,13 @@ export default function Contact() {
               });
 
               if (response.ok) {
-                setStatus("Message sent successfully.");
+                setStatus(text.success);
                 form.reset();
               } else {
-                setStatus("Something went wrong. Please try again.");
+                setStatus(text.error);
               }
             } catch {
-              setStatus("Something went wrong. Please try again.");
+              setStatus(text.error);
             }
           }}
           className="max-w-3xl mx-auto"
@@ -72,14 +123,14 @@ export default function Contact() {
                 htmlFor="name"
                 className="block text-sm font-semibold text-gray-700 mb-2"
               >
-                Name
+                {text.name}
               </label>
 
               <input
                 id="name"
                 name="name"
                 type="text"
-                placeholder="Your name"
+                placeholder={text.namePlaceholder}
                 required
                 className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-5 py-4 text-gray-900 outline-none transition focus:border-blue-400 focus:ring-2 focus:ring-blue-100"
               />
@@ -93,14 +144,14 @@ export default function Contact() {
                 htmlFor="email"
                 className="block text-sm font-semibold text-gray-700 mb-2"
               >
-                Email
+                {text.email}
               </label>
 
               <input
                 id="email"
                 name="email"
                 type="email"
-                placeholder="you@company.com"
+                placeholder={text.emailPlaceholder}
                 required
                 className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-5 py-4 text-gray-900 outline-none transition focus:border-blue-400 focus:ring-2 focus:ring-blue-100"
               />
@@ -117,14 +168,14 @@ export default function Contact() {
               htmlFor="company"
               className="block text-sm font-semibold text-gray-700 mb-2"
             >
-              Company
+              {text.company}
             </label>
 
             <input
               id="company"
               name="company"
               type="text"
-              placeholder="Your company"
+              placeholder={text.companyPlaceholder}
               className="w-full rounded-2xl border border-gray-200 bg-gray-50 px-5 py-4 text-gray-900 outline-none transition focus:border-blue-400 focus:ring-2 focus:ring-blue-100"
             />
 
@@ -139,14 +190,14 @@ export default function Contact() {
               htmlFor="message"
               className="block text-sm font-semibold text-gray-700 mb-2"
             >
-              Message
+              {text.message}
             </label>
 
             <textarea
               id="message"
               name="message"
               rows={6}
-              placeholder="Tell me a little about what you are looking to improve..."
+              placeholder={text.messagePlaceholder}
               required
               className="w-full resize-none rounded-2xl border border-gray-200 bg-gray-50 px-5 py-4 text-gray-900 outline-none transition focus:border-blue-400 focus:ring-2 focus:ring-blue-100"
             />
@@ -162,7 +213,7 @@ export default function Contact() {
               type="submit"
               className="bg-blue-500 hover:bg-blue-400 text-white px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 shadow-lg shadow-blue-500/20"
             >
-              Send message →
+              {text.submit} →
             </button>
 
             {status && (
@@ -184,7 +235,7 @@ export default function Contact() {
             href="mailto:silvanaebernal@gmail.com"
             className="text-gray-700 hover:text-blue-500 transition"
           >
-            Email
+            {text.emailLink}
           </a>
 
           <a
@@ -193,7 +244,7 @@ export default function Contact() {
             rel="noopener noreferrer"
             className="text-gray-700 hover:text-blue-500 transition"
           >
-            LinkedIn
+            {text.linkedinLink}
           </a>
 
         </div>

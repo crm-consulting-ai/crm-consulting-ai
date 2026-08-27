@@ -1,4 +1,32 @@
-export default function Experience() {
+type ExperienceProps = {
+  lang?: "en" | "es";
+};
+
+export default function Experience({
+  lang = "en",
+}: ExperienceProps) {
+  const content = {
+    en: {
+      eyebrow: "EXPERIENCE",
+      titleLine1: "CRM experience across multiple",
+      titleLine2: "international markets",
+      websites: "Websites managed",
+      subscribers: "Subscribers",
+      countries: "International countries",
+    },
+
+    es: {
+      eyebrow: "EXPERIENCIA",
+      titleLine1: "Experiencia en CRM en múltiples",
+      titleLine2: "mercados internacionales",
+      websites: "Websites gestionados",
+      subscribers: "Suscriptores",
+      countries: "Países internacionales",
+    },
+  };
+
+  const text = content[lang];
+
   return (
     <section
       id="experience"
@@ -18,10 +46,11 @@ export default function Experience() {
       >
 
         {/* HEADER */}
+
         <div className="text-center">
 
           <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-blue-400 mb-6">
-            EXPERIENCE
+            {text.eyebrow}
           </p>
 
           <h2
@@ -35,15 +64,17 @@ export default function Experience() {
               mx-auto
             "
           >
-            CRM experience across multiple
+            {text.titleLine1}
             <br className="hidden sm:block" />
-            {" "}international markets
+            {" "}
+            {text.titleLine2}
           </h2>
 
         </div>
 
 
         {/* STATS */}
+
         <div
           className="
             grid
@@ -55,6 +86,7 @@ export default function Experience() {
         >
 
           {/* WEBSITES */}
+
           <div
             className="
               flex
@@ -70,6 +102,7 @@ export default function Experience() {
           >
 
             {/* Browser icon */}
+
             <div
               className="text-blue-400 mb-4 md:mb-6"
               style={{
@@ -96,17 +129,20 @@ export default function Experience() {
                   stroke="currentColor"
                   strokeWidth="1.7"
                 />
+
                 <path
                   d="M3 8H21"
                   stroke="currentColor"
                   strokeWidth="1.7"
                 />
+
                 <circle
                   cx="6"
                   cy="6"
                   r="0.8"
                   fill="currentColor"
                 />
+
                 <circle
                   cx="9"
                   cy="6"
@@ -121,13 +157,14 @@ export default function Experience() {
             </p>
 
             <p className="text-gray-300 mt-3 md:mt-4 text-sm md:text-base">
-              Websites managed
+              {text.websites}
             </p>
 
           </div>
 
 
           {/* SUBSCRIBERS */}
+
           <div
             className="
               flex
@@ -143,6 +180,7 @@ export default function Experience() {
           >
 
             {/* Mail icon */}
+
             <div
               className="text-blue-400 mb-4 md:mb-6"
               style={{
@@ -169,6 +207,7 @@ export default function Experience() {
                   stroke="currentColor"
                   strokeWidth="1.7"
                 />
+
                 <path
                   d="M4 7L12 13L20 7"
                   stroke="currentColor"
@@ -184,13 +223,14 @@ export default function Experience() {
             </p>
 
             <p className="text-gray-300 mt-3 md:mt-4 text-sm md:text-base">
-              Subscribers
+              {text.subscribers}
             </p>
 
           </div>
 
 
           {/* INTERNATIONAL COUNTRIES */}
+
           <div
             className="
               flex
@@ -204,6 +244,7 @@ export default function Experience() {
           >
 
             {/* Globe icon */}
+
             <div
               className="text-blue-400 mb-4 md:mb-6"
               style={{
@@ -228,17 +269,20 @@ export default function Experience() {
                   stroke="currentColor"
                   strokeWidth="1.7"
                 />
+
                 <path
                   d="M3 12H21"
                   stroke="currentColor"
                   strokeWidth="1.7"
                 />
+
                 <path
                   d="M12 3C15 6 16.5 9 16.5 12C16.5 15 15 18 12 21"
                   stroke="currentColor"
                   strokeWidth="1.7"
                   strokeLinecap="round"
                 />
+
                 <path
                   d="M12 3C9 6 7.5 9 7.5 12C7.5 15 9 18 12 21"
                   stroke="currentColor"
@@ -253,7 +297,7 @@ export default function Experience() {
             </p>
 
             <p className="text-gray-300 mt-3 md:mt-4 text-sm md:text-base">
-              International countries
+              {text.countries}
             </p>
 
           </div>

@@ -1,4 +1,71 @@
-export default function Services() {
+type ServicesProps = {
+  lang?: "en" | "es";
+};
+
+export default function Services({ lang = "en" }: ServicesProps) {
+  const content = {
+    en: {
+      eyebrow: "WHAT I DO",
+      title: "CRM & Automation Solutions",
+      subtitle: "End-to-end CRM and lifecycle marketing strategies.",
+
+      services: [
+        {
+          title: "CRM Strategy",
+          description:
+            "Customer lifecycle design, segmentation, onboarding, retention and reactivation strategies.",
+        },
+        {
+          title: "Marketing Automation",
+          description:
+            "Automated email, push and onsite campaigns focused on improving engagement and conversion.",
+        },
+        {
+          title: "Analytics & Reporting",
+          description:
+            "KPI monitoring, campaign analysis and performance reporting for data-driven decisions.",
+        },
+        {
+          title: "Retention & Engagement",
+          description:
+            "Optimization of user journeys and communication strategies to maximize customer value.",
+        },
+      ],
+    },
+
+    es: {
+      eyebrow: "LO QUE HAGO",
+      title: "Soluciones de CRM y Automatización",
+      subtitle:
+        "Estrategias integrales de CRM y marketing basado en el ciclo de vida del cliente.",
+
+      services: [
+        {
+          title: "Estrategia CRM",
+          description:
+            "Diseño del ciclo de vida del cliente, segmentación, onboarding, retención y estrategias de reactivación.",
+        },
+        {
+          title: "Automatización de Marketing",
+          description:
+            "Campañas automatizadas de email, push y onsite enfocadas en mejorar el engagement y la conversión.",
+        },
+        {
+          title: "Analytics & Reporting",
+          description:
+            "Seguimiento de KPIs, análisis de campañas y reporting de resultados para la toma de decisiones basada en datos.",
+        },
+        {
+          title: "Retención & Engagement",
+          description:
+            "Optimización de journeys y estrategias de comunicación para maximizar el valor del cliente.",
+        },
+      ],
+    },
+  };
+
+  const text = content[lang];
+
   return (
     <section
       id="services"
@@ -10,15 +77,15 @@ export default function Services() {
       <div className="text-center mb-20">
 
         <p className="uppercase tracking-[0.3em] text-sm text-blue-500 mb-5">
-          WHAT I DO
+          {text.eyebrow}
         </p>
 
         <h2 className="text-5xl font-bold mb-6">
-          CRM & Automation Solutions
+          {text.title}
         </h2>
 
         <p className="text-gray-600 text-xl">
-          End-to-end CRM and lifecycle marketing strategies.
+          {text.subtitle}
         </p>
 
       </div>
@@ -61,14 +128,11 @@ export default function Services() {
           </div>
 
           <h3 className="text-2xl font-semibold mb-5">
-            CRM Strategy
+            {text.services[0].title}
           </h3>
 
           <p className="text-gray-600 leading-relaxed">
-            Customer lifecycle design,
-            segmentation, onboarding,
-            retention and reactivation
-            strategies.
+            {text.services[0].description}
           </p>
 
         </div>
@@ -102,13 +166,11 @@ export default function Services() {
           </div>
 
           <h3 className="text-2xl font-semibold mb-5">
-            Marketing Automation
+            {text.services[1].title}
           </h3>
 
           <p className="text-gray-600 leading-relaxed">
-            Automated email, push and onsite
-            campaigns focused on improving
-            engagement and conversion.
+            {text.services[1].description}
           </p>
 
         </div>
@@ -141,13 +203,11 @@ export default function Services() {
           </div>
 
           <h3 className="text-2xl font-semibold mb-5">
-            Analytics & Reporting
+            {text.services[2].title}
           </h3>
 
           <p className="text-gray-600 leading-relaxed">
-            KPI monitoring, campaign analysis
-            and performance reporting for
-            data-driven decisions.
+            {text.services[2].description}
           </p>
 
         </div>
@@ -181,13 +241,11 @@ export default function Services() {
           </div>
 
           <h3 className="text-2xl font-semibold mb-5">
-            Retention & Engagement
+            {text.services[3].title}
           </h3>
 
           <p className="text-gray-600 leading-relaxed">
-            Optimization of user journeys and
-            communication strategies to
-            maximize customer value.
+            {text.services[3].description}
           </p>
 
         </div>
