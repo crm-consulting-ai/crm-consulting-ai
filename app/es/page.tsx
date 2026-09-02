@@ -6,6 +6,7 @@ import Experience from "@/components/Experience";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import CRMMaturityCheck from "../../components/CRMMaturityCheck";
 
 export default function SpanishHome() {
   return (
@@ -13,6 +14,7 @@ export default function SpanishHome() {
       <Navbar lang="es" />
       <Hero lang="es" />
       <Services lang="es" />
+      <CRMMaturityCheck lang="es" />
       <CRMFramework lang="es" />
       <Experience lang="es" />
       <About lang="es" />
