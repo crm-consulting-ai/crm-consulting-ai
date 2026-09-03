@@ -49,7 +49,7 @@ export default function Experience({
 
         <div className="text-center">
 
-          <p className="uppercase tracking-[0.3em] text-xs sm:text-sm text-blue-400 mb-6">
+          <p className="uppercase tracking-[0.3em] text-xs sm:text-sm font-semibold text-[#20e1ff] mb-6">
             {text.eyebrow}
           </p>
 

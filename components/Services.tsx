@@ -76,7 +76,7 @@ export default function Services({ lang = "en" }: ServicesProps) {
 
       <div className="text-center mb-20">
 
-        <p className="uppercase tracking-[0.3em] text-sm text-blue-500 mb-5">
+        <p className="uppercase tracking-[0.3em] text-sm font-semibold text-blue-500 mb-5">
           {text.eyebrow}
         </p>
 

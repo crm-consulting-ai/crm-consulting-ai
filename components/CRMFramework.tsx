@@ -283,7 +283,7 @@ export default function CRMFramework({
 
         <div className="text-center mb-14">
 
-          <p className="uppercase tracking-[0.35em] text-xs md:text-sm text-blue-400 mb-5 font-semibold">
+          <p className="uppercase tracking-[0.35em] text-xs md:text-sm text-[#20e1ff] mb-5 font-semibold">
             {text.eyebrow}
           </p>
 

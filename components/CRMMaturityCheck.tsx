@@ -541,7 +541,7 @@ export default function CRMMaturityCheck({
         <div className="rounded-3xl border border-blue-200/40 bg-[#29456f] px-6 py-12 shadow-[0_0_60px_rgba(37,99,235,0.14)] sm:px-10 sm:py-16">
           {!started ? (
             <div className="mx-auto max-w-2xl text-center">
-              <p className="mb-4 text-sm font-semibold tracking-[0.25em] text-blue-300">
+              <p className="mb-4 text-sm font-semibold tracking-[0.25em] text-[#20e1ff]">
                 {text.eyebrow}
               </p>
 

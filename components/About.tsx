@@ -68,7 +68,7 @@ export default function About({ lang = "en" }: AboutProps) {
 
           <div>
 
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#20e1ff]">
               {text.eyebrow}
             </p>
 

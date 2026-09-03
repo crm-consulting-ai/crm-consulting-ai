@@ -53,7 +53,7 @@ export default function Hero({ lang = "en" }: HeroProps) {
         <div className="max-w-3xl">
 
           {/* Eyebrow */}
-          <p className="uppercase tracking-[0.35em] text-sm text-blue-300 mb-8">
+          <p className="uppercase tracking-[0.35em] text-sm text-[#20e1ff] mb-8">
             {text.eyebrow}
           </p>
 

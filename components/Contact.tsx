@@ -69,7 +69,7 @@ export default function Contact({ lang = "en" }: ContactProps) {
 
         <div className="text-center mb-12">
 
-          <p className="uppercase tracking-[0.3em] text-sm text-blue-500 mb-6">
+          <p className="uppercase tracking-[0.3em] text-sm font-semibold text-blue-500 mb-6">
             {text.eyebrow}
           </p>
 
