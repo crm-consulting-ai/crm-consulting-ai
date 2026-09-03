@@ -43,32 +43,36 @@ export default function About({ lang = "en" }: AboutProps) {
       className="relative overflow-hidden bg-[#020817] py-24 sm:py-32"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+
+        {/* Mobile eyebrow */}
+
+        <p className="mb-8 text-center text-sm font-semibold uppercase tracking-[0.25em] text-[#20e1ff] lg:hidden">
+          {text.eyebrow}
+        </p>
+
+        <div className="flex flex-col gap-14 lg:flex-row lg:items-center lg:gap-20">
 
           {/* Photo */}
 
-          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-
+          <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:w-1/2 lg:max-w-none">
             <div className="absolute -inset-4 rounded-3xl bg-blue-500/10 blur-2xl" />
 
             <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-2xl">
-
               <img
                 src="/about-silvana.png"
                 alt={text.imageAlt}
                 className="h-auto w-full object-cover"
               />
-
             </div>
-
           </div>
-
 
           {/* Content */}
 
-          <div>
+          <div className="w-full lg:w-1/2">
 
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#20e1ff]">
+            {/* Desktop eyebrow */}
+
+            <p className="mb-4 hidden text-sm font-semibold uppercase tracking-[0.25em] text-[#20e1ff] lg:block">
               {text.eyebrow}
             </p>
 
@@ -81,7 +85,6 @@ export default function About({ lang = "en" }: AboutProps) {
             </p>
 
             <div className="mt-8 space-y-5 text-lg leading-7 text-white/90">
-
               {text.paragraphs.map((paragraph, index) => (
                 <p key={index}>
                   {paragraph}
@@ -91,7 +94,6 @@ export default function About({ lang = "en" }: AboutProps) {
               <p className="font-semibold text-white/90">
                 {text.final}
               </p>
-
             </div>
 
           </div>
